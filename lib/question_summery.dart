@@ -11,28 +11,35 @@ class QuestionSummery extends StatelessWidget {
       child: SingleChildScrollView(
         child: Column(
           children: data.map((data) {
-            return Row(
-              children: [
-                Text(((data['question_index'] as int) + 1).toString()),
-                Expanded(
-                  child: Column(
-                    children: [
-                      Text(
-                        data['question'].toString(),
-                      ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      Text(
-                        data['selected_ans'].toString(),
-                      ),
-                      Text(
-                        data['correct_ans'].toString(),
-                      ),
-                    ],
+            return Container(
+              margin:const EdgeInsets.only(bottom: 20),
+              child: Row(
+                children: [
+                  Text(((data['question_index'] as int) + 1).toString()),
+                  Expanded(
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Text(
+                          data['question'].toString(),
+                          textAlign: TextAlign.left,
+                        ),
+                        const SizedBox(
+                          height: 5,
+                        ),
+                        Text(
+                          data['selected_ans'].toString(),
+                          textAlign: TextAlign.left,
+                        ),
+                        Text(
+                          data['correct_ans'].toString(),
+                          textAlign: TextAlign.left,
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             );
           }).toList(),
         ),

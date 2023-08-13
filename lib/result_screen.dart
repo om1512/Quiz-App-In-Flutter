@@ -7,6 +7,8 @@ class ResultScreen extends StatelessWidget {
       {super.key, required this.selectedAnswer});
   final List<String> selectedAnswer;
   final void Function() restartQuiz;
+
+  
   List<Map<String, Object>> get summeryData {
     List<Map<String, Object>> data = [];
     for (var i = 0; i < selectedAnswer.length; i++) {

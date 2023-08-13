@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:quiz_app/answer_button.dart';
 import 'package:quiz_app/data/questions.dart';
@@ -50,7 +49,7 @@ class _QuestionScreenState extends State<QuestionScreen> {
             const SizedBox(
               height: 30,
             ),
-            ...current_question.shuffledAnswer().map((ans) {
+            ...current_question.shuffledAnswer.map((ans) {
               return AnswerButton(
                   ans: ans,
                   onTap: () {
